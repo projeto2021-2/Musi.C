@@ -1,0 +1,10 @@
+:root{
+    --color-primary:rgb(33, 19, 43);
+    --color-fontPrincipal:rgb(231, 231, 231);
+    --color-fontSecondary:rgb(241, 207, 231);
+    --colorC:rgb(243, 10, 138);
+    --color-secondary: rgba(128, 25, 187, 0.651);
+
+
+    --spacing: 15px
+}
