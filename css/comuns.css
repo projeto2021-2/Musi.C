@@ -108,9 +108,6 @@ ul{
     width: 100%;
 }
 
-.linkProfile{
-
-}
 
 .profile{
     width: 42px;
@@ -119,9 +116,19 @@ ul{
 }
 
 
-
 /* Comportamento do mouse  */
 button:hover{
     background-color: var( --buttonHover ) ;
 } 
+
+.card{
+    width: 30%;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: var(--color-secondary);
+}
+
+.boxSecond{
+    width:60px 
+}
 
