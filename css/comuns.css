@@ -4,10 +4,15 @@
     box-sizing: border-box;
 }
 
+:root{
+    font-size: 50px;
+}
+
 body{
     font-family: 'Rubik', sans-serif;
-    background: var(--color-primary);
-
+    font-size: 20px;
+    background: rgb(32,17,43);
+    background: linear-gradient(180deg, rgba(32,17,43,1) 21%, rgba(21,11,28,1) 43%, rgba(13,5,19,1) 71%);
 }
 
 .menu{
@@ -35,9 +40,40 @@ h2{
     font-size: 18px;
 }
 
-.container{
-    
-    width: 700px;
-    background: white;
-    margin: 25px auto;
+.box{
+    width:100vw;
+    height:100vh;
+}
+
+.navbar{
+    width: 30%;
+    margin-left: 20px;
+}
+
+.icons{
+    width: 25px;
+    vertical-align: bottom;
+
+}
+
+ul{
+    list-style: none;
+}
+
+.navbar li{
+    margin: auto auto 20px;
+
+}
+
+ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+ul li a:hover{
+    color: var(--color-fontSecondary) ;
+}
+
+.player{
+    display: fixed-bottom;
 }
