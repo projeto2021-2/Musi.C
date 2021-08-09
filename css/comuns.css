@@ -9,10 +9,10 @@
 }
 
 body{
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
-    background: rgb(32,17,43);
-    background: linear-gradient(180deg, rgba(32,17,43,1) 21%, rgba(21,11,28,1) 43%, rgba(13,5,19,1) 71%);
+    background: var(--color-terciary);
+    background: var(--gradient);
 }
 
 .menu{
@@ -40,6 +40,10 @@ h2{
     font-size: 18px;
 }
 
+#Gn{
+    margin: 40px 0;
+}
+
 .box{
     width:100vw;
     height:100vh;
@@ -54,8 +58,13 @@ h2{
 .icons{
     width: 25px;
     vertical-align: bottom;
+    margin-right: 10px;
 }
-
+.iconsNav{
+    width: 25px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
 ul{
     list-style: none;
 }
@@ -70,25 +79,49 @@ ul{
 }
 .button{
     text-align: justify;
-    background: rgba(128, 25, 187, 0.651);
+    background:var(--color-button);
     font-size: 16px;
     width: 150%;
     border-radius: 10px 0 10px 0;
     color: white;
     padding: 20px;
-    border-color: rgba(128, 25, 187, 0.651);
+    border-color: var(--color-button);
     box-shadow: 0 0 10px black; ;
 }
 
 .feed{
+    width: 100%;
     margin-left: 75px;
 }
-.prot{
-    height: 97%;
+
+.navigation{
+    align-items:baseline;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
     width: 100%;
 }
+
+.linkProfile{
+
+}
+
+.profile{
+    width: 42px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+
+
 /* Comportamento do mouse  */
 button:hover{
-    background-color: #3d094d ;
+    background-color: var( --buttonHover ) ;
 } 
 
