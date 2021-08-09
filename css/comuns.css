@@ -173,21 +173,50 @@ button:hover{
 
 .player{
     width: 100%;
-    margin-top: 5px;
-    align-content: space-between;
+    margin-top: 25px;
+    text-align: center;
+    margin-right: 10px;
 }
 
 .musica{
     width: 33%;
 }
-.album{
-  width: 33%;
-}
 
-.som{
+.album{
     width: 33%;
 }
 
+.album-text{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.texto-album{
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    margin-left: 5px;
+}
+
+.texto-album span{
+    font-size: 15px;
+    color: white;
+}
+
+.texto-album h6{
+    color: white;
+}
+
+
+.som{
+    width: 33%;
+    margin-top: 35px;
+}
+
+.volume{
+    width: 15%;
+}
 
 
 
