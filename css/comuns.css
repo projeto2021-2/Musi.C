@@ -43,37 +43,52 @@ h2{
 .box{
     width:100vw;
     height:100vh;
+    display: flex;
+    flex-direction: row;
 }
 
 .navbar{
-    width: 30%;
-    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .icons{
     width: 25px;
     vertical-align: bottom;
-
 }
 
 ul{
     list-style: none;
 }
 
+.nav{
+    padding: 30px;
+}
+
 .navbar li{
     margin: auto auto 20px;
 
 }
-
-ul li a{
+.button{
+    text-align: justify;
+    background: rgba(128, 25, 187, 0.651);
+    font-size: 16px;
+    width: 150%;
+    border-radius: 10px 0 10px 0;
     color: white;
-    text-decoration: none;
+    padding: 20px;
+    border-color: rgba(128, 25, 187, 0.651);
+    box-shadow: 0 0 10px black; ;
 }
 
-ul li a:hover{
-    color: var(--color-fontSecondary) ;
+.feed{
+    margin-left: 75px;
 }
+.prot{
+    height: 97%;
+    width: 100%;
+}
+/* Comportamento do mouse  */
+button:hover{
+    background-color: #3d094d ;
+} 
 
-.player{
-    display: fixed-bottom;
-}
