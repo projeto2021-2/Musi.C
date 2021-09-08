@@ -8,8 +8,10 @@ namespace musiC.Models
         public int Id {get; set; }
         public string nome { get; set; }
         public string genero { get; set; }
-        public Artista artista { get; set; }
-        
         public DateTime lancamento { get; set; }
+
+        public Playlist playlist { get; set; }
+        public Artista artista { get; set; }
+
     }
 }

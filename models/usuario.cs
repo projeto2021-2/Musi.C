@@ -6,5 +6,6 @@ namespace musiC.Models
         public string login { get; set; }
         public string senha { get; set; }
         public Amigos amigos { get; set; }
+
     }
 }
