@@ -5,6 +5,6 @@ namespace musiC.Models
         public string email { get; set; }
         public Biblioteca biblioteca { get; set; }
 
-        public amigos amigos { get; set; }
+        public Amigos amigos { get; set; }
     }
 }

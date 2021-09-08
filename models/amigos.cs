@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace musiC.Models
 {
-    public class amigos{
+    public class Amigos{
         
-        public List<Usuario> Amigos { get; set; }
+        public List<Usuario> amigos { get; set; }
     }
 }
