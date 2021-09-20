@@ -9,8 +9,6 @@ namespace musiC.Models
         public string nome { get; set; }
         public string genero { get; set; }
         public DateTime lancamento { get; set; }
-
-        public Playlist playlist { get; set; }
         public Artista artista { get; set; }
 
     }

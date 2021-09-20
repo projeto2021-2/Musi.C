@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\faculdade\\musiC\\musiC.csproj": {}
+    "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\musiC.csproj": {}
   },
   "projects": {
-    "D:\\faculdade\\musiC\\musiC.csproj": {
+    "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\musiC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\faculdade\\musiC\\musiC.csproj",
+        "projectUniqueName": "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\musiC.csproj",
         "projectName": "musiC",
-        "projectPath": "D:\\faculdade\\musiC\\musiC.csproj",
-        "packagesPath": "C:\\Users\\julio\\.nuget\\packages\\",
-        "outputPath": "D:\\faculdade\\musiC\\obj\\",
+        "projectPath": "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\musiC.csproj",
+        "packagesPath": "C:\\Users\\Kassiel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\julio\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Kassiel\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -59,6 +59,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.9, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
