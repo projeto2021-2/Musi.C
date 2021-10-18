@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\musiC.csproj": {}
+    "C:\\Users\\julio.siqueira\\Downloads\\faculdade\\musiC\\musiC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\musiC.csproj": {
+    "C:\\Users\\julio.siqueira\\Downloads\\faculdade\\musiC\\musiC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\musiC.csproj",
+        "projectUniqueName": "C:\\Users\\julio.siqueira\\Downloads\\faculdade\\musiC\\musiC.csproj",
         "projectName": "musiC",
-        "projectPath": "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\musiC.csproj",
-        "packagesPath": "C:\\Users\\Kassiel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\obj\\",
+        "projectPath": "C:\\Users\\julio.siqueira\\Downloads\\faculdade\\musiC\\musiC.csproj",
+        "packagesPath": "C:\\Users\\julio.siqueira\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\julio.siqueira\\Downloads\\faculdade\\musiC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Kassiel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\julio.siqueira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,27 +44,31 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
             "Microsoft.AspNetCore.Authentication": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[5.0.11, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[5.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[5.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.9, )"
+              "version": "[5.0.11, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -87,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -13,9 +13,10 @@ namespace musiC.Services {
             
             var tokenHandler = new JwtSecurityTokenHandler();
             var appKey = Encoding.ASCII.GetBytes(AppKey.Key);
-
-            var tokenDescriptor =  new SecurityTokenDescriptor{
-                Subject = new ClaimsIdentity(new Claim[]{
+            var tokenDescriptor =  new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
                     new Claim(ClaimTypes.Name, usuario.login.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
