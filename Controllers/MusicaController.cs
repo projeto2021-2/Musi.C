@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using musiC.Models;
 using musiC.Data;
+using musiC.Models;
 
 namespace musiC.Controllers
 {
-    [Route("api/musica")]
+    [Route("api/[controller]")]
     [ApiController]
     public class MusicaController : ControllerBase
     {
@@ -23,16 +23,16 @@ namespace musiC.Controllers
 
         // GET: api/Musica
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Musica>>> Getmusicas()
+        public async Task<ActionResult<IEnumerable<Musica>>> GetMusicas()
         {
-            return await _context.musicas.ToListAsync();
+            return await _context.Musicas.ToListAsync();
         }
 
         // GET: api/Musica/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Musica>> GetMusica(int id)
         {
-            var musica = await _context.musicas.FindAsync(id);
+            var musica = await _context.Musicas.FindAsync(id);
 
             if (musica == null)
             {
@@ -78,7 +78,7 @@ namespace musiC.Controllers
         [HttpPost]
         public async Task<ActionResult<Musica>> PostMusica(Musica musica)
         {
-            _context.musicas.Add(musica);
+            _context.Musicas.Add(musica);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetMusica", new { id = musica.Id }, musica);
@@ -88,13 +88,13 @@ namespace musiC.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteMusica(int id)
         {
-            var musica = await _context.musicas.FindAsync(id);
+            var musica = await _context.Musicas.FindAsync(id);
             if (musica == null)
             {
                 return NotFound();
             }
 
-            _context.musicas.Remove(musica);
+            _context.Musicas.Remove(musica);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +102,7 @@ namespace musiC.Controllers
 
         private bool MusicaExists(int id)
         {
-            return _context.musicas.Any(e => e.Id == id);
+            return _context.Musicas.Any(e => e.Id == id);
         }
     }
 }

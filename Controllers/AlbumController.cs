@@ -12,47 +12,47 @@ namespace musiC.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PlaylistController : ControllerBase
+    public class AlbumController : ControllerBase
     {
         private readonly ProjectContext _context;
 
-        public PlaylistController(ProjectContext context)
+        public AlbumController(ProjectContext context)
         {
             _context = context;
         }
 
-        // GET: api/Playlist
+        // GET: api/Album
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Playlist>>> GetPlaylists()
+        public async Task<ActionResult<IEnumerable<Album>>> GetAlbuns()
         {
-            return await _context.Playlists.ToListAsync();
+            return await _context.Albuns.ToListAsync();
         }
 
-        // GET: api/Playlist/5
+        // GET: api/Album/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Playlist>> GetPlaylist(int id)
+        public async Task<ActionResult<Album>> GetAlbum(int id)
         {
-            var playlist = await _context.Playlists.FindAsync(id);
+            var album = await _context.Albuns.FindAsync(id);
 
-            if (playlist == null)
+            if (album == null)
             {
                 return NotFound();
             }
 
-            return playlist;
+            return album;
         }
 
-        // PUT: api/Playlist/5
+        // PUT: api/Album/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPlaylist(int id, Playlist playlist)
+        public async Task<IActionResult> PutAlbum(int id, Album album)
         {
-            if (id != playlist.Id)
+            if (id != album.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(playlist).State = EntityState.Modified;
+            _context.Entry(album).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace musiC.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!PlaylistExists(id))
+                if (!AlbumExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace musiC.Controllers
             return NoContent();
         }
 
-        // POST: api/Playlist
+        // POST: api/Album
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Playlist>> PostPlaylist(Playlist playlist)
+        public async Task<ActionResult<Album>> PostAlbum(Album album)
         {
-            _context.Playlists.Add(playlist);
+            _context.Albuns.Add(album);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPlaylist", new { id = playlist.Id }, playlist);
+            return CreatedAtAction("GetAlbum", new { id = album.Id }, album);
         }
 
-        // DELETE: api/Playlist/5
+        // DELETE: api/Album/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePlaylist(int id)
+        public async Task<IActionResult> DeleteAlbum(int id)
         {
-            var playlist = await _context.Playlists.FindAsync(id);
-            if (playlist == null)
+            var album = await _context.Albuns.FindAsync(id);
+            if (album == null)
             {
                 return NotFound();
             }
 
-            _context.Playlists.Remove(playlist);
+            _context.Albuns.Remove(album);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool PlaylistExists(int id)
+        private bool AlbumExists(int id)
         {
-            return _context.Playlists.Any(e => e.Id == id);
+            return _context.Albuns.Any(e => e.Id == id);
         }
     }
 }

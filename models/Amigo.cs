@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace musiC.Models
 {
-    public class Amigos{
+    public class Amigo{
         
         public int Id {get; set;}
         public int IdUsuario { get; set; }

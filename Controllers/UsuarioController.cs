@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using musiC.Models;
 using musiC.Data;
+using musiC.Models;
 
 namespace musiC.Controllers
 {
-    [Route("api/usuario")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UsuarioController : ControllerBase
     {
@@ -23,16 +23,16 @@ namespace musiC.Controllers
 
         // GET: api/Usuario
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> Getusuarios()
+        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
-            return await _context.usuarios.ToListAsync();
+            return await _context.Usuarios.ToListAsync();
         }
 
         // GET: api/Usuario/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
-            var usuario = await _context.usuarios.FindAsync(id);
+            var usuario = await _context.Usuarios.FindAsync(id);
 
             if (usuario == null)
             {
@@ -78,7 +78,7 @@ namespace musiC.Controllers
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
-            _context.usuarios.Add(usuario);
+            _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
@@ -88,13 +88,13 @@ namespace musiC.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUsuario(int id)
         {
-            var usuario = await _context.usuarios.FindAsync(id);
+            var usuario = await _context.Usuarios.FindAsync(id);
             if (usuario == null)
             {
                 return NotFound();
             }
 
-            _context.usuarios.Remove(usuario);
+            _context.Usuarios.Remove(usuario);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +102,7 @@ namespace musiC.Controllers
 
         private bool UsuarioExists(int id)
         {
-            return _context.usuarios.Any(e => e.Id == id);
+            return _context.Usuarios.Any(e => e.Id == id);
         }
     }
 }

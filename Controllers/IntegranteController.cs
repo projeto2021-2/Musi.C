@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using musiC.Models;
 using musiC.Data;
+using musiC.Models;
 
 namespace musiC.Controllers
 {
-    [Route("api/integrante")]
+    [Route("api/[controller]")]
     [ApiController]
     public class IntegranteController : ControllerBase
     {
@@ -23,16 +23,16 @@ namespace musiC.Controllers
 
         // GET: api/Integrante
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Integrante>>> GetIntegrante()
+        public async Task<ActionResult<IEnumerable<Integrante>>> GetIntegrantes()
         {
-            return await _context.Integrante.ToListAsync();
+            return await _context.Integrantes.ToListAsync();
         }
 
         // GET: api/Integrante/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Integrante>> GetIntegrante(int id)
         {
-            var integrante = await _context.Integrante.FindAsync(id);
+            var integrante = await _context.Integrantes.FindAsync(id);
 
             if (integrante == null)
             {
@@ -78,7 +78,7 @@ namespace musiC.Controllers
         [HttpPost]
         public async Task<ActionResult<Integrante>> PostIntegrante(Integrante integrante)
         {
-            _context.Integrante.Add(integrante);
+            _context.Integrantes.Add(integrante);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetIntegrante", new { id = integrante.Id }, integrante);
@@ -88,13 +88,13 @@ namespace musiC.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteIntegrante(int id)
         {
-            var integrante = await _context.Integrante.FindAsync(id);
+            var integrante = await _context.Integrantes.FindAsync(id);
             if (integrante == null)
             {
                 return NotFound();
             }
 
-            _context.Integrante.Remove(integrante);
+            _context.Integrantes.Remove(integrante);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +102,7 @@ namespace musiC.Controllers
 
         private bool IntegranteExists(int id)
         {
-            return _context.Integrante.Any(e => e.Id == id);
+            return _context.Integrantes.Any(e => e.Id == id);
         }
     }
 }

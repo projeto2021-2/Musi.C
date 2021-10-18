@@ -7943,23 +7943,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\julio.siqueira\\.nuget\\packages\\": {},
+    "C:\\Users\\julio\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\julio.siqueira\\Downloads\\faculdade\\musiC\\musiC.csproj",
+      "projectUniqueName": "D:\\faculdade\\musiC\\musiC.csproj",
       "projectName": "musiC",
-      "projectPath": "C:\\Users\\julio.siqueira\\Downloads\\faculdade\\musiC\\musiC.csproj",
-      "packagesPath": "C:\\Users\\julio.siqueira\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\julio.siqueira\\Downloads\\faculdade\\musiC\\obj\\",
+      "projectPath": "D:\\faculdade\\musiC\\musiC.csproj",
+      "packagesPath": "C:\\Users\\julio\\.nuget\\packages\\",
+      "outputPath": "D:\\faculdade\\musiC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\julio.siqueira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\julio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8039,7 +8039,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

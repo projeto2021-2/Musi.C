@@ -5,54 +5,54 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using musiC.Models;
 using musiC.Data;
+using musiC.Models;
 
 namespace musiC.Controllers
 {
-    [Route("api/amigos")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class AmigosController : ControllerBase
+    public class AmigoController : ControllerBase
     {
         private readonly ProjectContext _context;
 
-        public AmigosController(ProjectContext context)
+        public AmigoController(ProjectContext context)
         {
             _context = context;
         }
 
-        // GET: api/Amigos
+        // GET: api/Amigo
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Amigos>>> Getamigos()
+        public async Task<ActionResult<IEnumerable<Amigo>>> GetAmigos()
         {
-            return await _context.amigos.ToListAsync();
+            return await _context.Amigos.ToListAsync();
         }
 
-        // GET: api/Amigos/5
+        // GET: api/Amigo/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Amigos>> GetAmigos(int id)
+        public async Task<ActionResult<Amigo>> GetAmigo(int id)
         {
-            var amigos = await _context.amigos.FindAsync(id);
+            var amigo = await _context.Amigos.FindAsync(id);
 
-            if (amigos == null)
+            if (amigo == null)
             {
                 return NotFound();
             }
 
-            return amigos;
+            return amigo;
         }
 
-        // PUT: api/Amigos/5
+        // PUT: api/Amigo/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAmigos(int id, Amigos amigos)
+        public async Task<IActionResult> PutAmigo(int id, Amigo amigo)
         {
-            if (id != amigos.Id)
+            if (id != amigo.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(amigos).State = EntityState.Modified;
+            _context.Entry(amigo).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace musiC.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AmigosExists(id))
+                if (!AmigoExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace musiC.Controllers
             return NoContent();
         }
 
-        // POST: api/Amigos
+        // POST: api/Amigo
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Amigos>> PostAmigos(Amigos amigos)
+        public async Task<ActionResult<Amigo>> PostAmigo(Amigo amigo)
         {
-            _context.amigos.Add(amigos);
+            _context.Amigos.Add(amigo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAmigos", new { id = amigos.Id }, amigos);
+            return CreatedAtAction("GetAmigo", new { id = amigo.Id }, amigo);
         }
 
-        // DELETE: api/Amigos/5
+        // DELETE: api/Amigo/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAmigos(int id)
+        public async Task<IActionResult> DeleteAmigo(int id)
         {
-            var amigos = await _context.amigos.FindAsync(id);
-            if (amigos == null)
+            var amigo = await _context.Amigos.FindAsync(id);
+            if (amigo == null)
             {
                 return NotFound();
             }
 
-            _context.amigos.Remove(amigos);
+            _context.Amigos.Remove(amigo);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AmigosExists(int id)
+        private bool AmigoExists(int id)
         {
-            return _context.amigos.Any(e => e.Id == id);
+            return _context.Amigos.Any(e => e.Id == id);
         }
     }
 }

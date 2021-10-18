@@ -5,13 +5,15 @@ namespace musiC.Data
 {
     public class ProjectContext : DbContext{
 
-        public DbSet<Album> albuns {get; set; }
-        public DbSet<Amigos> amigos {get; set; }
-        public DbSet<Artista> artistas {get; set; }
-        public DbSet<Biblioteca> bibliotecas {get; set; }
-        public DbSet<Musica> musicas {get; set; }
-        public DbSet<Playlist> playlists {get; set; }
-        public DbSet<Usuario> usuarios {get; set; }
+        public DbSet<Album> Albuns {get; set; }
+        public DbSet<Amigo> Amigos {get; set; }
+        public DbSet<Artista> Artistas {get; set; }
+        public DbSet<Biblioteca> Bibliotecas {get; set; }
+        public DbSet<Musica> Musicas {get; set; }
+        public DbSet<Playlist> Playlists {get; set; }
+        public DbSet<Usuario> Usuarios {get; set; }
+        public DbSet<Integrante> Integrantes { get; set; }
+
 
         // conexão banco de dados
         protected override void OnConfiguring(DbContextOptionsBuilder Builder)
@@ -20,7 +22,6 @@ namespace musiC.Data
         }
 
         // conexão banco de dados
-        public DbSet<musiC.Models.Integrante> Integrante { get; set; }
 
     }
 }

@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using musiC.Models;
 using musiC.Data;
+using musiC.Models;
 
 namespace musiC.Controllers
 {
-    [Route("api/artista")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ArtistaController : ControllerBase
     {
@@ -23,16 +23,16 @@ namespace musiC.Controllers
 
         // GET: api/Artista
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Artista>>> Getartistas()
+        public async Task<ActionResult<IEnumerable<Artista>>> GetArtistas()
         {
-            return await _context.artistas.ToListAsync();
+            return await _context.Artistas.ToListAsync();
         }
 
         // GET: api/Artista/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Artista>> GetArtista(int id)
         {
-            var artista = await _context.artistas.FindAsync(id);
+            var artista = await _context.Artistas.FindAsync(id);
 
             if (artista == null)
             {
@@ -78,7 +78,7 @@ namespace musiC.Controllers
         [HttpPost]
         public async Task<ActionResult<Artista>> PostArtista(Artista artista)
         {
-            _context.artistas.Add(artista);
+            _context.Artistas.Add(artista);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetArtista", new { id = artista.Id }, artista);
@@ -88,13 +88,13 @@ namespace musiC.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteArtista(int id)
         {
-            var artista = await _context.artistas.FindAsync(id);
+            var artista = await _context.Artistas.FindAsync(id);
             if (artista == null)
             {
                 return NotFound();
             }
 
-            _context.artistas.Remove(artista);
+            _context.Artistas.Remove(artista);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +102,7 @@ namespace musiC.Controllers
 
         private bool ArtistaExists(int id)
         {
-            return _context.artistas.Any(e => e.Id == id);
+            return _context.Artistas.Any(e => e.Id == id);
         }
     }
 }

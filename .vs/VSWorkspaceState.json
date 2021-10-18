@@ -4,10 +4,8 @@
     "\\Data",
     "\\Migrations",
     "\\models",
-    "\\obj\\Debug",
-    "\\obj\\Debug\\net5.0",
     "\\Services"
   ],
-  "SelectedNode": "\\Program.cs",
+  "SelectedNode": "\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }

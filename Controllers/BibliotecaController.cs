@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using musiC.Models;
 using musiC.Data;
+using musiC.Models;
 
 namespace musiC.Controllers
 {
-    [Route("api/biblioteca")]
+    [Route("api/[controller]")]
     [ApiController]
     public class BibliotecaController : ControllerBase
     {
@@ -23,16 +23,16 @@ namespace musiC.Controllers
 
         // GET: api/Biblioteca
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Biblioteca>>> Getbibliotecas()
+        public async Task<ActionResult<IEnumerable<Biblioteca>>> GetBibliotecas()
         {
-            return await _context.bibliotecas.ToListAsync();
+            return await _context.Bibliotecas.ToListAsync();
         }
 
         // GET: api/Biblioteca/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Biblioteca>> GetBiblioteca(int id)
         {
-            var biblioteca = await _context.bibliotecas.FindAsync(id);
+            var biblioteca = await _context.Bibliotecas.FindAsync(id);
 
             if (biblioteca == null)
             {
@@ -78,7 +78,7 @@ namespace musiC.Controllers
         [HttpPost]
         public async Task<ActionResult<Biblioteca>> PostBiblioteca(Biblioteca biblioteca)
         {
-            _context.bibliotecas.Add(biblioteca);
+            _context.Bibliotecas.Add(biblioteca);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBiblioteca", new { id = biblioteca.Id }, biblioteca);
@@ -88,13 +88,13 @@ namespace musiC.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBiblioteca(int id)
         {
-            var biblioteca = await _context.bibliotecas.FindAsync(id);
+            var biblioteca = await _context.Bibliotecas.FindAsync(id);
             if (biblioteca == null)
             {
                 return NotFound();
             }
 
-            _context.bibliotecas.Remove(biblioteca);
+            _context.Bibliotecas.Remove(biblioteca);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +102,7 @@ namespace musiC.Controllers
 
         private bool BibliotecaExists(int id)
         {
-            return _context.bibliotecas.Any(e => e.Id == id);
+            return _context.Bibliotecas.Any(e => e.Id == id);
         }
     }
 }
