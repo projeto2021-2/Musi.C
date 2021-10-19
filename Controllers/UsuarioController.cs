@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using musiC.Data;
 using musiC.Models;
 
+using musiC.Services;
+
 namespace musiC.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Usuario")]
     [ApiController]
     public class UsuarioController : ControllerBase
     {
@@ -20,6 +22,29 @@ namespace musiC.Controllers
         {
             _context = context;
         }
+
+
+      [HttpPost]
+      [Route("Login")]
+      public ActionResult<dynamic> Login([FromBody] Credencial credencial) 
+      {
+        //Localiza o usuário no banco de dados.
+        var usuario = _context.Usuarios.SingleOrDefault(u => u.Login == credencial.Login);
+
+        if (usuario == null || !SenhaService.CompararHash(credencial.Senha, usuario.Senha)) {
+          return NotFound(new { message = "Usuário ou senha inválidos" });
+        }
+
+        // Gera o Token
+        var token = TokenService.GerarToken(usuario);
+
+        return new {
+          usuario = usuario,
+          token = token
+        };
+      }
+
+
 
         // GET: api/Usuario
         [HttpGet]
@@ -47,11 +72,12 @@ namespace musiC.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
         {
-            if (id != usuario.Id)
+            if (id != usuario.UserId)
             {
                 return BadRequest();
             }
-
+            
+            usuario.Senha = SenhaService.GerarHash(usuario.Senha);
             _context.Entry(usuario).State = EntityState.Modified;
 
             try
@@ -78,10 +104,13 @@ namespace musiC.Controllers
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
+
+            usuario.Senha = SenhaService.GerarHash(usuario.Senha);
+
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUsuario", new { id = usuario.Id }, usuario);
+            return CreatedAtAction("GetUsuario", new { id = usuario.UserId }, usuario);
         }
 
         // DELETE: api/Usuario/5
@@ -102,7 +131,7 @@ namespace musiC.Controllers
 
         private bool UsuarioExists(int id)
         {
-            return _context.Usuarios.Any(e => e.Id == id);
+            return _context.Usuarios.Any(e => e.UserId == id);
         }
     }
 }

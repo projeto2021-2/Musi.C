@@ -10,6 +10,5 @@ namespace musiC.Models
         public string genero { get; set; }
         public DateTime lancamento { get; set; }
         public Artista artista { get; set; }
-
     }
 }

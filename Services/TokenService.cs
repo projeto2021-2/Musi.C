@@ -17,7 +17,9 @@ namespace musiC.Services {
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, usuario.login.ToString()),
+                    new Claim(ClaimTypes.Name, usuario.Login.ToString()),
+                    new Claim(ClaimTypes.Role, usuario.Classe.ToString())
+
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(appKey), SecurityAlgorithms.HmacSha256Signature)

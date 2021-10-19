@@ -47,7 +47,7 @@ namespace musiC.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBiblioteca(int id, Biblioteca biblioteca)
         {
-            if (id != biblioteca.Id)
+            if (id != biblioteca.BibliotecaId)
             {
                 return BadRequest();
             }
@@ -81,7 +81,7 @@ namespace musiC.Controllers
             _context.Bibliotecas.Add(biblioteca);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetBiblioteca", new { id = biblioteca.Id }, biblioteca);
+            return CreatedAtAction("GetBiblioteca", new { id = biblioteca.BibliotecaId }, biblioteca);
         }
 
         // DELETE: api/Biblioteca/5
@@ -102,7 +102,7 @@ namespace musiC.Controllers
 
         private bool BibliotecaExists(int id)
         {
-            return _context.Bibliotecas.Any(e => e.Id == id);
+            return _context.Bibliotecas.Any(e => e.BibliotecaId == id);
         }
     }
 }

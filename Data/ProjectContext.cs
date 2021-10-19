@@ -6,13 +6,11 @@ namespace musiC.Data
     public class ProjectContext : DbContext{
 
         public DbSet<Album> Albuns {get; set; }
-        public DbSet<Amigo> Amigos {get; set; }
         public DbSet<Artista> Artistas {get; set; }
         public DbSet<Biblioteca> Bibliotecas {get; set; }
         public DbSet<Musica> Musicas {get; set; }
         public DbSet<Playlist> Playlists {get; set; }
         public DbSet<Usuario> Usuarios {get; set; }
-        public DbSet<Integrante> Integrantes { get; set; }
 
 
         // conexão banco de dados

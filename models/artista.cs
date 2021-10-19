@@ -6,6 +6,7 @@ namespace musiC.Models
         
         public int Id {get; set; }
         public string nome { get; set; }
-        public List<Integrante> integrantes { get; set; }
+        public List<Usuario> integrantes;
+        public List<Album> albuns;
     }
 }

@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Controllers",
     "\\Data",
-    "\\Migrations",
     "\\models",
     "\\Services"
   ],
-  "SelectedNode": "\\appsettings.json",
+  "SelectedNode": "\\models\\Usuario.cs",
   "PreviewInSolutionExplorer": false
 }
