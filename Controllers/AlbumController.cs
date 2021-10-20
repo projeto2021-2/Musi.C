@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
+using Microsoft.AspNetCore.Authorization;
 using musiC.Data;
 using musiC.Models;
 
@@ -12,6 +14,7 @@ namespace musiC.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AlbumController : ControllerBase
     {
         private readonly ProjectContext _context;
@@ -23,6 +26,7 @@ namespace musiC.Controllers
 
         // GET: api/Album
         [HttpGet]
+        [Authorize(Roles ="Usuario, Administrador, Artista")]
         public async Task<ActionResult<IEnumerable<Album>>> GetAlbuns()
         {
             return await _context.Albuns.ToListAsync();
@@ -30,6 +34,7 @@ namespace musiC.Controllers
 
         // GET: api/Album/5
         [HttpGet("{id}")]
+        [Authorize(Roles ="Usuario, Administrador, Artista")]
         public async Task<ActionResult<Album>> GetAlbum(int id)
         {
             var album = await _context.Albuns.FindAsync(id);
@@ -45,6 +50,7 @@ namespace musiC.Controllers
         // PUT: api/Album/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles ="Administrador, Artista")]
         public async Task<IActionResult> PutAlbum(int id, Album album)
         {
             if (id != album.Id)
@@ -76,6 +82,7 @@ namespace musiC.Controllers
         // POST: api/Album
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles ="Administrador, Artista")]
         public async Task<ActionResult<Album>> PostAlbum(Album album)
         {
             _context.Albuns.Add(album);
@@ -86,6 +93,7 @@ namespace musiC.Controllers
 
         // DELETE: api/Album/5
         [HttpDelete("{id}")]
+        [Authorize(Roles ="Administrador, Artista")]
         public async Task<IActionResult> DeleteAlbum(int id)
         {
             var album = await _context.Albuns.FindAsync(id);

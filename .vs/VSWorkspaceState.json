@@ -3,9 +3,11 @@
     "",
     "\\Controllers",
     "\\Data",
+    "\\Migrations",
     "\\models",
+    "\\Properties",
     "\\Services"
   ],
-  "SelectedNode": "\\models\\Usuario.cs",
+  "SelectedNode": "\\Controllers\\UsuarioController.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -8,12 +8,14 @@ using Microsoft.EntityFrameworkCore;
 using musiC.Data;
 using musiC.Models;
 
+using Microsoft.AspNetCore.Authorization;
 using musiC.Services;
 
 namespace musiC.Controllers
 {
     [Route("api/Usuario")]
     [ApiController]
+    [Authorize]
     public class UsuarioController : ControllerBase
     {
         private readonly ProjectContext _context;
@@ -25,29 +27,34 @@ namespace musiC.Controllers
 
 
       [HttpPost]
+      [AllowAnonymous]
       [Route("Login")]
-      public ActionResult<dynamic> Login([FromBody] Credencial credencial) 
+      public ActionResult<dynamic> Login([FromBody] Credencial Credencial) 
       {
         //Localiza o usuário no banco de dados.
-        var usuario = _context.Usuarios.SingleOrDefault(u => u.Login == credencial.Login);
+        var usuario = _context.Usuarios.SingleOrDefault(u => u.Login == Credencial.Login);
 
-        if (usuario == null || !SenhaService.CompararHash(credencial.Senha, usuario.Senha)) {
-          return NotFound(new { message = "Usuário ou senha inválidos" });
-        }
+            if (usuario == null || !SenhaService.CompararHash(Credencial.Senha, usuario.Senha))
+            {
+                return NotFound(new {message = "Usuario ou senha inválidos"});
+            }
+
 
         // Gera o Token
-        var token = TokenService.GerarToken(usuario);
+            var token = TokenService.GerarToken(usuario);
 
-        return new {
-          usuario = usuario,
-          token = token
-        };
+            return new
+            {
+              usuario = usuario,
+              token = token
+            };
       }
 
 
 
         // GET: api/Usuario
         [HttpGet]
+        [Authorize (Roles = "Administrador, Usuario, Artista")]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuarios()
         {
             return await _context.Usuarios.ToListAsync();
@@ -55,6 +62,7 @@ namespace musiC.Controllers
 
         // GET: api/Usuario/5
         [HttpGet("{id}")]
+        [Authorize (Roles = "Administrador, Usuario, Artista")]
         public async Task<ActionResult<Usuario>> GetUsuario(int id)
         {
             var usuario = await _context.Usuarios.FindAsync(id);
@@ -70,6 +78,7 @@ namespace musiC.Controllers
         // PUT: api/Usuario/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize (Roles = "Administrador")]
         public async Task<IActionResult> PutUsuario(int id, Usuario usuario)
         {
             if (id != usuario.UserId)
@@ -102,6 +111,7 @@ namespace musiC.Controllers
         // POST: api/Usuario
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
 
@@ -115,6 +125,7 @@ namespace musiC.Controllers
 
         // DELETE: api/Usuario/5
         [HttpDelete("{id}")]
+        [Authorize(Roles ="Administrador")]
         public async Task<IActionResult> DeleteUsuario(int id)
         {
             var usuario = await _context.Usuarios.FindAsync(id);

@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
+using Microsoft.AspNetCore.Authorization;
 using musiC.Data;
 using musiC.Models;
 
@@ -12,6 +14,7 @@ namespace musiC.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ArtistaController : ControllerBase
     {
         private readonly ProjectContext _context;
@@ -23,6 +26,7 @@ namespace musiC.Controllers
 
         // GET: api/Artista
         [HttpGet]
+        [Authorize(Roles ="Usuario, Administrador, Artista")]
         public async Task<ActionResult<IEnumerable<Artista>>> GetArtistas()
         {
             return await _context.Artistas.ToListAsync();
@@ -30,6 +34,7 @@ namespace musiC.Controllers
 
         // GET: api/Artista/5
         [HttpGet("{id}")]
+        [Authorize(Roles ="Usuario, Administrador, Artista")]
         public async Task<ActionResult<Artista>> GetArtista(int id)
         {
             var artista = await _context.Artistas.FindAsync(id);
@@ -45,6 +50,7 @@ namespace musiC.Controllers
         // PUT: api/Artista/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles ="Administrador")]
         public async Task<IActionResult> PutArtista(int id, Artista artista)
         {
             if (id != artista.Id)
@@ -76,6 +82,7 @@ namespace musiC.Controllers
         // POST: api/Artista
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles ="Administrador")]
         public async Task<ActionResult<Artista>> PostArtista(Artista artista)
         {
             _context.Artistas.Add(artista);
@@ -86,6 +93,7 @@ namespace musiC.Controllers
 
         // DELETE: api/Artista/5
         [HttpDelete("{id}")]
+        [Authorize(Roles ="Administrador")]
         public async Task<IActionResult> DeleteArtista(int id)
         {
             var artista = await _context.Artistas.FindAsync(id);

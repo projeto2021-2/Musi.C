@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
+using Microsoft.AspNetCore.Authorization;
 using musiC.Data;
 using musiC.Models;
 
@@ -12,6 +14,7 @@ namespace musiC.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MusicaController : ControllerBase
     {
         private readonly ProjectContext _context;
@@ -23,6 +26,7 @@ namespace musiC.Controllers
 
         // GET: api/Musica
         [HttpGet]
+        [Authorize(Roles ="Usuario, Administrador, Artista")]
         public async Task<ActionResult<IEnumerable<Musica>>> GetMusicas()
         {
             return await _context.Musicas.ToListAsync();
@@ -30,6 +34,7 @@ namespace musiC.Controllers
 
         // GET: api/Musica/5
         [HttpGet("{id}")]
+        [Authorize(Roles ="Usuario, Administrador, Artista")]
         public async Task<ActionResult<Musica>> GetMusica(int id)
         {
             var musica = await _context.Musicas.FindAsync(id);
@@ -45,6 +50,7 @@ namespace musiC.Controllers
         // PUT: api/Musica/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [Authorize(Roles ="Administrador, Artista")]
         public async Task<IActionResult> PutMusica(int id, Musica musica)
         {
             if (id != musica.Id)
@@ -76,6 +82,7 @@ namespace musiC.Controllers
         // POST: api/Musica
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [Authorize(Roles ="Administrador, Artista")]
         public async Task<ActionResult<Musica>> PostMusica(Musica musica)
         {
             _context.Musicas.Add(musica);
@@ -86,6 +93,7 @@ namespace musiC.Controllers
 
         // DELETE: api/Musica/5
         [HttpDelete("{id}")]
+        [Authorize(Roles ="Administrador, Artista")]
         public async Task<IActionResult> DeleteMusica(int id)
         {
             var musica = await _context.Musicas.FindAsync(id);

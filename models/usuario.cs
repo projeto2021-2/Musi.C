@@ -12,7 +12,7 @@ using System.ComponentModel.DataAnnotations;
             public string Login { get; set; }
             public string Classe { get; set; }
 
-            [JsonIgnore]
+           // [JsonIgnore]
             public string Senha {  get; set; }
 
 
