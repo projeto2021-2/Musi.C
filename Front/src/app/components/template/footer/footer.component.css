@@ -1,0 +1,49 @@
+mat-toolbar {
+    position:fixed;
+    bottom: 0;
+    display: flex;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* PLAYER BUTTONS E SLIDER */
+.player{
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+mat-slider {
+    justify-content: center;
+    width: 100%;
+}
+.mat-slider-horizontal {
+    height: 31px;
+    min-width: 128px;
+}
+
+/* ##################### */
+
+.musica{
+    display: flex;
+    align-items: center;
+}
+img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+}
+.albumData span{
+    display:block;
+    font-size: 12px;
+}
+.albumData .musicName{
+    font-size: 15px;
+}
+
