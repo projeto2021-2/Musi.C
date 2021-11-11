@@ -16,7 +16,7 @@ namespace musiC.Data
         // conexão banco de dados
         protected override void OnConfiguring(DbContextOptionsBuilder Builder)
         {
-           Builder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=musiC;Integrated Security=True");
+            Builder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=musiC;Integrated Security=True");
         }
 
         // conexão banco de dados

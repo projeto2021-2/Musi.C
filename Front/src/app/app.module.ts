@@ -13,19 +13,27 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/template/header/header.component';
-import { ContentComponent } from './components/template/content/content.component';
-import { HomepageComponent } from './components/views/homepage/homepage.component';
+import { HeaderComponent } from './template/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './components/template/footer/footer.component';
+import { FooterComponent } from './template/footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { CriarUsuarioComponent } from './criar-usuario/criar-usuario.component';
+import { CriarPlaylistComponent } from './criar-playlist/criar-playlist.component';
+import { CadastroMusicaComponent } from './cadastro-musica/cadastro-musica.component';
+import { BibliotecaComponent } from './biblioteca/biblioteca.component';
+import { FavoritasComponent } from './favoritas/favoritas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ContentComponent,
-    HomepageComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    CriarUsuarioComponent,
+    CriarPlaylistComponent,
+    CadastroMusicaComponent,
+    BibliotecaComponent,
+    FavoritasComponent
   ],
   imports: [
     BrowserModule,
