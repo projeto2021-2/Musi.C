@@ -1,3 +1,13 @@
-.img-header{
-    width: 8%;
+.mat-elevation-z4{
+    
+}
+
+
+.principalBody{
+    text-align:left;
+    background-color: rgb(51, 48, 48);
+    width: 100%;
+}
+button{    
+    color: white;
 }

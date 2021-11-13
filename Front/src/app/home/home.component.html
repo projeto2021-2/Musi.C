@@ -1,33 +1,47 @@
 
 <!-- SIDE NAVBAR -->
-<mat-sidenav-container>
-    <mat-sidenav mode="side" opened fixedInViewport="true" fixedTopGap="64" fixedBottomGap="64">
-        <mat-nav-list>
-            <a mat-list-item [routerLink]="'/'">
-                <mat-icon mat-icon-list>home</mat-icon>
-                <span>&nbsp;Home</span>
-            </a>
-            <a mat-list-item [routerLink]="'/'">
-                <mat-icon mat icon-list>search</mat-icon>
-                <span>&nbsp;Buscar</span>
-            </a>   
-            <a mat-list-item [routerLink]="'/Biblioteca'">
-                <mat-icon>library_music</mat-icon>
-                <span>&nbsp; Sua Biblioteca</span>
-            </a>   
+<body>
+    <mat-sidenav-container class="sidenav">
+        <mat-sidenav mode="side" opened fixedInViewport="true" fixedTopGap="64"fixedBottomGap="64">
+            <div class="logo">
+                <a class="link-toolbar">
+                <img src="https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE"                     class="img-NAV"/>
+                </a>
+            </div>
 
-            <br>
+            <mat-nav-list>
+                
+                <a mat-list-item [routerLink]="'/'">
+                    <mat-icon mat-icon-list>home</mat-icon>
+                    <span>&nbsp;Home</span>
+                </a>
+                <a mat-list-item [routerLink]="'/'">
+                    <mat-icon mat icon-list>search</mat-icon>
+                    <span>&nbsp;Buscar</span>
+                </a>   
+                <a mat-list-item [routerLink]="'/Biblioteca'">
+                    <mat-icon>library_music</mat-icon>
+                    <span>&nbsp; Sua Biblioteca</span>
+                </a>   
+
+                <br>
+
+                <a mat-list-item [routerLink]="'/CriarPlaylist'">
+                    <mat-icon>library_add</mat-icon>
+                    <span>&nbsp;Criar Playlist</span>
+                </a>   
             
-            <a mat-list-item [routerLink]="'/CriarPlaylist'">
-                <mat-icon>library_add</mat-icon>
-                <span>&nbsp;Criar Playlist</span>
-            </a>   
-        
-        <div>
-            <a mat-list-item [routerLink]="'/Favoritas'">
-                <span class="favorites">&nbsp; Musicas Favoritas</span>
-            </a>
-    </div>
-        </mat-nav-list>
-    </mat-sidenav>
-</mat-sidenav-container>
+            <div>
+                <a mat-list-item [routerLink]="'/Favoritas'">
+                    <span class="favorites">&nbsp; Musicas Favoritas</span>
+                </a>
+        </div>
+            </mat-nav-list>
+        </mat-sidenav>
+    </mat-sidenav-container> 
+
+    
+
+</body>
+
+
