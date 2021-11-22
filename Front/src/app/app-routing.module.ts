@@ -7,6 +7,7 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/views/homepage/homepage.component';
 
+
 const routes: Routes = [
     { path: '', component: HomepageComponent},
     { path: 'usuario/cadastro', component: CriarUsuarioComponent},

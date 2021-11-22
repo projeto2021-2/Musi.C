@@ -13,3 +13,8 @@ span{
     margin-top: 20px;
     border-radius: 50%;
 }
+
+mat-sidenav-content
+{
+    padding: 15px;
+}

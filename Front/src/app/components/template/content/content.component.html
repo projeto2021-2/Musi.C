@@ -19,17 +19,19 @@
                     <mat-icon mat icon-list>search</mat-icon>
                     <span>&nbsp;Buscar</span>
                 </a>   
+                <a mat-list-item routerLink="usuario/cadastro">
+                    <mat-icon>library_add</mat-icon>
+                    <span>&nbsp;Criar Usuario</span>
+                </a> 
                 <a mat-list-item routerLink="biblioteca">
                     <mat-icon>library_music</mat-icon>
                     <span>&nbsp; Sua Biblioteca</span>
                 </a>   
-
-                <br>
-
                 <a mat-list-item routerLink="playlist/criar">
                     <mat-icon>library_add</mat-icon>
                     <span>&nbsp;Criar Playlist</span>
                 </a>   
+                 
             
             <div>
                 <a mat-list-item routerLink="favoritas">
@@ -38,6 +40,8 @@
         </div>
             </mat-nav-list>
         </mat-sidenav>
+        <mat-sidenav-content><router-outlet></router-outlet></mat-sidenav-content> 
+
     </mat-sidenav-container> 
 
     

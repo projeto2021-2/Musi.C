@@ -1,3 +1,12 @@
 .img-header{
     width: 8%;
 }
+
+.loginButton{
+    text-align:right;
+    background-color: rgb(34, 32, 32);
+    width: 100%;
+}
+button{    
+    color: white;
+}

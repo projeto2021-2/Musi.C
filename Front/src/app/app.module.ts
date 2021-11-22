@@ -23,6 +23,11 @@ import { BibliotecaComponent } from './components/views/biblioteca/biblioteca.co
 import { FavoritasComponent } from './components/views/favoritas/favoritas.component';
 import { ContentComponent } from './components/template/content/content.component';
 import { HomepageComponent } from './components/views/homepage/homepage.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -52,7 +57,10 @@ import { HomepageComponent } from './components/views/homepage/homepage.componen
     MatInputModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
