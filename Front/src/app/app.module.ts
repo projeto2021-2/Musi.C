@@ -13,27 +13,30 @@ import { MatSnackBarModule } from '@angular/material/snack-bar'
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './template/header/header.component';
+import { HeaderComponent } from './components/template/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './template/footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { CriarUsuarioComponent } from './criar-usuario/criar-usuario.component';
-import { CriarPlaylistComponent } from './criar-playlist/criar-playlist.component';
-import { CadastroMusicaComponent } from './cadastro-musica/cadastro-musica.component';
-import { BibliotecaComponent } from './biblioteca/biblioteca.component';
-import { FavoritasComponent } from './favoritas/favoritas.component';
+import { FooterComponent } from './components/template/footer/footer.component';
+import { CriarUsuarioComponent } from './components/views/criar-usuario/criar-usuario.component';
+import { CriarPlaylistComponent } from './components/views/criar-playlist/criar-playlist.component';
+import { CadastroMusicaComponent } from './components/views/cadastro-musica/cadastro-musica.component';
+import { BibliotecaComponent } from './components/views/biblioteca/biblioteca.component';
+import { FavoritasComponent } from './components/views/favoritas/favoritas.component';
+import { ContentComponent } from './components/template/content/content.component';
+import { HomepageComponent } from './components/views/homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
     CriarUsuarioComponent,
     CriarPlaylistComponent,
     CadastroMusicaComponent,
     BibliotecaComponent,
-    FavoritasComponent
+    FavoritasComponent,
+    ContentComponent,
+    ContentComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

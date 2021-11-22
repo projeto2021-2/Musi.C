@@ -11,28 +11,28 @@
 
             <mat-nav-list>
                 
-                <a mat-list-item [routerLink]="'/'">
+                <a mat-list-item routerLink="">
                     <mat-icon mat-icon-list>home</mat-icon>
                     <span>&nbsp;Home</span>
                 </a>
-                <a mat-list-item [routerLink]="'/'">
+                <a mat-list-item routerLink="">
                     <mat-icon mat icon-list>search</mat-icon>
                     <span>&nbsp;Buscar</span>
                 </a>   
-                <a mat-list-item [routerLink]="'/Biblioteca'">
+                <a mat-list-item routerLink="biblioteca">
                     <mat-icon>library_music</mat-icon>
                     <span>&nbsp; Sua Biblioteca</span>
                 </a>   
 
                 <br>
 
-                <a mat-list-item [routerLink]="'/CriarPlaylist'">
+                <a mat-list-item routerLink="playlist/criar">
                     <mat-icon>library_add</mat-icon>
                     <span>&nbsp;Criar Playlist</span>
                 </a>   
             
             <div>
-                <a mat-list-item [routerLink]="'/Favoritas'">
+                <a mat-list-item routerLink="favoritas">
                     <span class="favorites">&nbsp; Musicas Favoritas</span>
                 </a>
         </div>
