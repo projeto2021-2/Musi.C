@@ -7943,19 +7943,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kassiel\\.nuget\\packages\\": {}
+    "C:\\Users\\julio\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\Back\\musiC.csproj",
+      "projectUniqueName": "D:\\Projetos\\faculdade\\musiC\\Back\\musiC.csproj",
       "projectName": "musiC",
-      "projectPath": "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\Back\\musiC.csproj",
-      "packagesPath": "C:\\Users\\Kassiel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kassiel\\Documents\\UP\\3° Semestre\\Desenvolvimento de Software Visual\\projeto-prototipo\\Musi.C\\Back\\obj\\",
+      "projectPath": "D:\\Projetos\\faculdade\\musiC\\Back\\musiC.csproj",
+      "packagesPath": "C:\\Users\\julio\\.nuget\\packages\\",
+      "outputPath": "D:\\Projetos\\faculdade\\musiC\\Back\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Kassiel\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\julio\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -8032,7 +8032,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
